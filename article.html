@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章转载</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", system-ui, sans-serif;
+        }
+        body {
+            /* 主体暗色蓝色渐变 */
+            background: linear-gradient(135deg, #0f172a, #1e2948, #111833);
+            color:#e2e8f0;
+            padding:24px;
+            min-height:100vh;
+        }
+        /* 复古窗口样式 蓝色调 */
+        .window {
+            background: #1e2940;
+            border: 2px solid #475580;
+            border-radius: 6px;
+            box-shadow: 4px 4px 0 #0b102088;
+            overflow: hidden;
+        }
+        .win-title {
+            background: linear-gradient(90deg, #3b4e80, #5068a8);
+            color:white;
+            padding:6px 10px;
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            font-weight:bold;
+            font-size:14px;
+        }
+        .win-btn span{
+            display:inline-block;
+            width:18px;height:18px;
+            background:#d1d9f0;
+            color:#222;
+            text-align:center;
+            margin-left:3px;
+            border-radius:2px;
+            font-size:12px;
+            cursor:pointer;
+        }
+        .win-content{
+            padding:12px;
+        }
+        .page-wrap{
+            display:grid;
+            grid-template-columns: 65% 33%;
+            gap:2%;
+            max-width:1400px;
+            margin:0 auto;
+        }
+        /* 左侧文章列表窗口 */
+        .article-list{
+            height:85vh;
+            overflow-y:auto;
+        }
+        /* 文章条目链接，整行点击 */
+        .item a{
+            display:block;
+            text-decoration:none;
+            color:inherit;
+            padding:14px 10px;
+            border-bottom:1px solid #334160;
+        }
+        .item a:hover{
+            background:#2c3b5f;
+        }
+        .item-date{
+            color:#89a2d8;
+            font-size:13px;
+            margin-bottom:4px;
+        }
+        .item h3{
+            font-size:24px;
+            color:#cbd5f0;
+            margin-bottom:6px;
+        }
+        .item-desc{
+            color:#94a3c7;
+            font-size:14px;
+        }
+        .item .arrow{
+            float:right;
+            color:#7b99dd;
+        }
+        /* 右侧文库 */
+        .library{
+            height:60vh;
+        }
+        .folder-row{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr 1fr;
+            gap:10px;
+            margin-bottom:20px;
+        }
+        .folder{
+            text-align:center;
+            padding:8px;
+        }
+        .folder-box{
+            width:50px;height:40px;
+            background:#6078b0;
+            border-radius:4px;
+            margin:0 auto 4px;
+        }
+        .lib-item a{
+            display:block;
+            padding:8px 4px;
+            border-bottom:1px solid #334160;
+            font-size:14px;
+            text-decoration:none;
+            color:#cbd5f0;
+        }
+        .lib-item a:hover{
+            background:#2c3b5f;
+        }
+        .lib-item .arrow{
+            float:right;
+            color:#7b99dd;
+        }
+        /* 右下角悬浮小窗口 */
+        .small-win{
+            position:fixed;
+            bottom:20px;
+            right:20px;
+            width:320px;
+        }
+        .small-win .win-content{
+            text-align:center;
+            padding:20px;
+        }
+        .planet{
+            width:180px;
+            margin:0 auto 20px;
+        }
+        .back-home{
+            display:block;
+            margin:0 auto 24px;
+            width:fit-content;
+            padding:10px 18px;
+            background:#3366dd;
+            color:white;text-decoration:none;border-radius:8px;
+        }
+        .back-home:hover{
+            background:#4488ff;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-home">← 返回主页</a>
+    <div class="page-wrap">
+        <!-- 左侧：最近写下的 -->
+        <div class="window article-list">
+            <div class="win-title">
+                <span>最近写下的</span>
+                <div class="win-btn">
+                    <span>_</span><span>□</span><span>×</span>
+                </div>
+            </div>
+            <div class="win-content">
+                <div class="item">
+                    <a href="article-something.html">
+                        <div class="item-date">2025.07.23 &nbsp; something <span class="arrow">↗</span></div>
+                        <h3>想说的话</h3>
+                        <p class="item-desc">被默认头像的人类温柔地看见的那些事情。</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="article-amur.html">
+                        <div class="item-date">2025.06.08 &nbsp; politics <span class="arrow">↗</span></div>
+                        <h3>阿穆尔河畔的囚徒</h3>
+                        <p class="item-desc">我们跨过江水，以为奔向了自由。</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="article-island.html">
+                        <div class="item-date">2025.05.26 &nbsp; korea <span class="arrow">↗</span></div>
+                        <h3>风之岛的孤儿</h3>
+                        <p class="item-desc">地已经露出她的血，不再遮掩被杀者。</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="article-wave.html">
+                        <div class="item-date">2025.05.23 &nbsp; japan <span class="arrow">↗</span></div>
+                        <h3>浪花半月记</h3>
+                        <p class="item-desc">权力之处，必有抵抗。</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="article-demo.html">
+                        <div class="item-date">2024.05.04 &nbsp; llm <span class="arrow">↗</span></div>
+                        <h3>待补充文章</h3>
+                        <p class="item-desc">在这里继续新增你的文字。</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧文库 -->
+        <div>
+            <div class="window library">
+                <div class="win-title">
+                    <span>文库</span>
+                    <div class="win-btn">
+                        <span>_</span><span>□</span><span>×</span>
+                    </div>
+                </div>
+                <div class="win-content">
+                    <div class="folder-row">
+                        <div class="folder">
+                            <div class="folder-box"></div>
+                            <div>诗</div>
+                        </div>
+                        <div class="folder">
+                            <div class="folder-box"></div>
+                            <div>文</div>
+                        </div>
+                        <div class="folder">
+                            <div class="folder-box"></div>
+                            <div>小说</div>
+                        </div>
+                        <div class="folder">
+                            <div class="folder-box"></div>
+                            <div>歌</div>
+                        </div>
+                    </div>
+                    <div class="lib-item">
+                        <a href="article-pengpai.html">彭湃颂 <span class="arrow">↗</span></a>
+                    </div>
+                    <div class="lib-item">
+                        <a href="article-horse.html">《朝日杯之后，从LINE消息里捡到自戕自艾的马娘工友》 <span class="arrow">↗</span></a>
+                    </div>
+                    <div class="lib-item">
+                        <a href="article-rose.html">带刺的蓝蔷薇 <span class="arrow">↗</span></a>
+                    </div>
+                    <p style="margin-top:10px;font-size:12px;color:#788cb8;">3 篇文字</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右下角悬浮小窗口 -->
+    <div class="window small-win">
+        <div class="win-title">
+            <span>somewhere.exe</span>
+            <div class="win-btn">
+                <span>✦</span><span>×</span>
+            </div>
+        </div>
+        <div class="win-content">
+            <svg class="planet" viewBox="0 0 200 160">
+                <ellipse cx="100" cy="80" rx="55" ry="45" fill="#6078b0"/>
+                <ellipse cx="100" cy="80" rx="90" ry="22" fill="none" stroke="#89a2d8" stroke-width="6"/>
+                <polygon points="185,25 190,15 180,18" fill="#fff"/>
+            </svg>
+            <p style="font-size:24px;color:#cbd5f0;font-weight:bold;">世界这么大，<br>我想去看看。</p>
+        </div>
+    </div>
+</body>
+</html>
