@@ -17,10 +17,10 @@
         }
         .avatar{
             width:120px;height:120px;border-radius:50%;
-            background:#4488ff;
+            /* 把原来纯色背景换成图片 */
+            object-fit: cover;
             margin-bottom:24px;
-            display:flex;align-items:center;justify-content:center;
-            font-size:40px;font-weight:bold;
+            border:none;
         }
         h1{font-size:36px;margin-bottom:10px;}
         .desc{color:#aaa;font-size:18px;margin-bottom:32px;line-height:1.6;}
@@ -41,14 +41,17 @@
 </head>
 <body>
 <div class="container">
-    <div class="avatar">S</div>
+    <!-- 这里是头像，src写你的图片文件名 -->
+    <img class="avatar" src="avatar.png" alt="头像">
     <h1>你好，我是 sakinmu</h1>
     <p class="desc">一名在校学生｜喜欢代码、网络、创作</p>
 
     <div class="card">
         <h2>关于我</h2>
         <p>
-            不存在。
+            喜欢折腾各种小项目，学习网页开发、网络相关知识。
+            闲暇时会写代码、做一些网站和有趣的小作品。
+            欢迎来到我的个人站点。
         </p>
     </div>
 
